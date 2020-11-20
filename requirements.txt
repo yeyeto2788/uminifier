@@ -1,0 +1,2 @@
+pyminifier>=2.1
+mpy-cross>=1.12
