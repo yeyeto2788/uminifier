@@ -67,25 +67,25 @@ class TColors:
     underline = '\033[4m'
 
 
-def get_file_size(file_path):
-    """
+def get_file_size(file_path) -> int:
+    """Get the file size in bytes.
 
     Args:
         file_path:
 
-    Returns:
+    Returns: File size in bytes
 
     """
     return os.stat(file_path).st_size
 
 
-def minify_code(file_path):
-    """
+def minify_code(file_path) -> str:
+    """Function to minify the code of a given python file.
 
     Args:
         file_path:
 
-    Returns:
+    Returns: Minified code.
 
     """
     # Open the file and read it's content.
@@ -104,8 +104,11 @@ def minify_code(file_path):
     return result
 
 
-def uminify(arguments):
-    """
+def uminify(arguments) -> None:
+    """Main logic for converting a given file into .mpy file format
+
+    Check for file existance and execute the minification of the code within the file
+    and convert it into `.mpy` file format using `mpy-cross` library.
 
     Args:
         arguments:
@@ -182,7 +185,9 @@ def uminify(arguments):
             os.remove(intermediate_filename)
 
     log_it(
-        f"\n{TColors.bold + TColors.okgreen}{input_size - output_size} Bytes reduced.{TColors.endc}")
+        f"\n{TColors.bold + TColors.okgreen}{input_size - output_size} "
+        f"Bytes reduced.{TColors.endc}"
+    )
 
 
 def main():
