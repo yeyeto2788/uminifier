@@ -28,3 +28,10 @@ pip install pyminifier>=2.1 mpy-cross>=1.12
 ```shell script
 pytest
 ```
+
+## How to use it with docker
+
+### Converting a file
+```shell script
+docker run -it --rm --name uminifier -v $PWD:/tmp yeyeto2788/uminifier /tmp/<file_to_convert-py> -k
+```
